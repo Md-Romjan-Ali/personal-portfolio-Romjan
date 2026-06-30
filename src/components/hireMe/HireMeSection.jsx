@@ -35,7 +35,7 @@ const HireMeSection = () => {
 
   return (
     <section className="bg-grid-pattern py-24 px-6 flex items-center justify-center min-h-screen">
-      <div className="w-full max-w-4xl">
+      <div className="w-full max-w-6xl">
         <motion.div
           ref={cardRef}
           onMouseMove={handleMouseMove}
@@ -52,7 +52,7 @@ const HireMeSection = () => {
           <div className="absolute -top-32 right-10 w-80 h-80 bg-purple-500/10 blur-[100px] rounded-full"></div>
 
           <div className="relative z-10 px-8 py-20 md:px-16 md:py-28 text-center flex flex-col items-center">
-            
+
             {/* Decorative Element */}
             <motion.div
               animate={{ rotate: isHovered ? 360 : 0 }}
@@ -81,7 +81,7 @@ const HireMeSection = () => {
               transition={{ delay: 0.3 }}
               className="text-neutral-400 text-xl md:text-2xl max-w-xl leading-relaxed mb-12"
             >
-              Let's collaborate to build something that pushes the boundaries of what's possible on the web.
+              Let us collaborate to build something that pushes the boundaries of what is possible on the web.
             </motion.p>
 
             {/* 3D Animated Hire Me Button */}

@@ -2,64 +2,36 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
 
 const projects = [
   {
-    title: "English || জানালা",
+    title: "PropertyHub",
     description:
-      "English Janala is a simple and interactive web application designed to help beginners learn basic English vocabulary and concepts easily.",
-    tech: ["HTML5", "Tailwind CSS", "JavaScript (ES6)","API",],
+      "Built a modern property rental booking platform with responsive UI, secure JWT-based authentication, and seamless property booking with secure Stripe payment integration.",
+    tech: ["React.js", "Next.js", "Node.js", "Express.js", "Tailwind CSS", "Mongodb", "JavaScript (ES6)", "API", "JWT"],
     images: [
-      "https://i.ibb.co.com/tPmNG35W/image.png",
-      "https://i.ibb.co.com/Y75L5XhQ/image.png",
-      "https://i.ibb.co.com/YT15Bb0S/image.png",
-   
-      
-      // Add more images here if available
+      "https://i.ibb.co.com/W459yLD6/Whats-App-Image-2026-06-27-at-9-56-27-PM.jpg",
+      "https://i.ibb.co.com/ZpJYNc7J/Whats-App-Image-2026-06-27-at-9-58-50-PM.jpg",
+      "https://i.ibb.co.com/S71BYHQz/Whats-App-Image-2026-06-27-at-10-04-10-PM.jpg",
     ],
-    live: "https://md-romjan-ali.github.io/English-Janala/",
-    source: "#",
+    live: "https://property-renteal-booking-platformcl.vercel.app",
+    source: "https://github.com/Md-Romjan-Ali/property-rental-client",
   },
   {
-    title: "Payoo Mobile Bank",
+    title: "StudyRoom",
     description:
-      "A modern digital wallet UI inspired by mobile banking apps with clean design, authentication flow, and transaction-style interface.",
-    tech: ["HTML5", "Tailwind CSS", "JavaScript",],
+      "Study Nook is a modern AI-powered study platform designed to help users focus better, plan efficiently, and improve learning productivity in a distraction-free environment.",
+    tech: ["React.js", "Next.js", "Node.js", "Express.js", "Tailwind CSS", "Mongodb", "JavaScript (ES6)", "API",],
     images: [
-      "https://i.ibb.co.com/F4MYpdfG/image.png",
-      "https://i.ibb.co.com/4vyZ5Fx/image.png",
-      "https://i.ibb.co.com/21ffKWc4/image.png",
-      
-      // Add more images here if available
+      "https://i.ibb.co.com/rKVrJGbq/a73e3bae-ebb3-45fa-8eed-2af93bbc1053.jpg",
+      "https://i.ibb.co.com/0pV0yxNt/0d5365f6-f077-4205-9c51-69e5ef8efda4.jpg",
+      "https://i.ibb.co.com/FbhmfyjJ/7af76d10-b7b1-4173-9d02-f7d06e3a1a87.jpg",
+
     ],
-    live: "https://md-romjan-ali.github.io/payoo-mobile/",
-    source: "#",
-  },
-  {
-    title: "GitHub Issues Tracker",
-    description:
-      "A web application that lets users browse, search, and filter GitHub-style issues, view their status, and explore details in a modal.",
-    tech: ["HTML5", "Tailwind CSS", "DaisyUI", "JavaScript"],
-    images: [
-      "https://i.ibb.co.com/sJ59Nx7P/image.png",
-      "https://i.ibb.co.com/pjYkn3XV/image.png",
-      "https://i.ibb.co.com/35vM2h22/image.png",
-    ],
-    live: "#",
-    source: "#",
-  },
-  {
-    title: "AI Tool Platform",
-    description:
-      "Romjan AI Tool Platform is a multi-tool web application that provides different AI-based utilities in one place, offering users quick and simple online tools through a clean and responsive interface.",
-    tech: ["HTML5", "Tailwind CSS", "DaisyUI", "JavaScript (ES6)","API"],
-    images: [
-      "https://i.ibb.co.com/fdCbxgvp/image.png",
-      "https://i.ibb.co.com/gb45qmJy/image.png",
-      "https://i.ibb.co.com/Pv9hmSvN/image.png",
-    ],
-    live: "https://romjanaitoolplatform.netlify.app/",
-    source: "#",
+    live: "https://study-nook-delta.vercel.app/",
+    source: "https://github.com/Md-Romjan-Ali/StudyNook",
   },
 ];
 
@@ -85,7 +57,7 @@ function ImageCarousel({ images }) {
 
   return (
     <div
-   
+
       className="relative rounded-3xl overflow-hidden mb-8 aspect-video bg-[#1a1a1a]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -124,9 +96,8 @@ function ImageCarousel({ images }) {
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              i === index ? "bg-cyan-400 scale-125" : "bg-zinc-600 hover:bg-zinc-400"
-            }`}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${i === index ? "bg-cyan-400 scale-125" : "bg-zinc-600 hover:bg-zinc-400"
+              }`}
           />
         ))}
       </div>
@@ -153,7 +124,7 @@ export default function FeaturedProjects() {
   ];
 
   return (
-    <section id="projects" className="bg-grid-pattern py-20 px-6 lg:px-2 h-screen overflow-y-auto text-white">
+    <section id="projects" className="bg-grid-pattern py-20 px-6 text-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -168,7 +139,7 @@ export default function FeaturedProjects() {
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:mx-[5%] gap-4 lg:gap-5">
           {projects.map((project, i) => (
             <motion.article
               key={i}
@@ -229,6 +200,14 @@ export default function FeaturedProjects() {
           ))}
         </div>
       </div>
+      <Link
+        href="/allprojects"
+        className="flex justify-center mt-10 items-center gap-3 px-6 py-3 rounded-2xl bg-white text-black font-semibold hover:bg-cyan-400 w-70 mx-auto transition-all duration-300 group"
+      >
+        <span>View All Projects</span>
+
+        <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
+      </Link>
     </section>
   );
 }

@@ -140,22 +140,6 @@ function TechCard({ card, index }) {
   const isInView = useInView(cardRef, { once: true, margin: "-40px" });
   const [hovered, setHovered] = useState(false);
 
-  // GSAP 3D tilt
-  useEffect(() => {
-    const el = cardRef.current;
-    if (!el) return;
-    const onMove = (e) => {
-      const r = el.getBoundingClientRect();
-      const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
-      const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
-      gsap.to(el, { rotateX: -dy * 14, rotateY: dx * 14, duration: 0.3, ease: "power2.out", transformPerspective: 900 });
-    };
-    const onLeave = () => gsap.to(el, { rotateX: 0, rotateY: 0, duration: 0.7, ease: "elastic.out(1,0.5)" });
-    el.addEventListener("mousemove", onMove);
-    el.addEventListener("mouseleave", onLeave);
-    return () => { el.removeEventListener("mousemove", onMove); el.removeEventListener("mouseleave", onLeave); };
-  }, []);
-
   return (
     <motion.div
       ref={cardRef}
@@ -164,7 +148,7 @@ function TechCard({ card, index }) {
       transition={{ duration: 0.65, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      style={{ transformStyle: "preserve-3d", height: "100%" }}
+      style={{ height: "100%" }}
     >
       <div
         className="relative rounded-2xl p-6 flex flex-col gap-4 overflow-hidden cursor-pointer h-full"
@@ -190,31 +174,20 @@ function TechCard({ card, index }) {
         </AnimatePresence>
 
         {/* Icon */}
-        <motion.div
-          className="w-13 h-13 w-12 h-12 rounded-xl flex items-center justify-center relative z-10 shrink-0"
+        <div
+          className="w-12 h-12 rounded-xl flex items-center justify-center relative z-10 shrink-0"
           style={{ background: card.glow, color: card.color }}
-          animate={hovered ? { scale: 1.15, rotate: [0, -10, 10, -5, 0] } : { scale: 1 }}
-          transition={{ duration: 0.45 }}
         >
           {card.icon}
-          {/* Pulsing dot */}
-          <motion.span
-            className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full"
-            style={{ background: card.color }}
-            animate={hovered ? { scale: [1, 1.8, 1], opacity: [1, 0.5, 1] } : { scale: 0, opacity: 0 }}
-            transition={{ duration: 0.9, repeat: Infinity }}
-          />
-        </motion.div>
+        </div>
 
         {/* Tag */}
-        <motion.span
+        <span
           className="self-start text-[10px] font-bold uppercase tracking-[0.2em] px-2.5 py-1 rounded-full"
           style={{ background: card.glow, color: card.color, border: `1px solid ${card.border}` }}
-          animate={hovered ? { scale: 1.06 } : { scale: 1 }}
-          transition={{ duration: 0.2 }}
         >
           {card.tag}
-        </motion.span>
+        </span>
 
         {/* Text */}
         <div className="relative z-10 mt-auto">
@@ -285,7 +258,7 @@ export default function TechStack() {
     return () => ctx.revert();
   }, []);
 
-  const particleColors = ["#3b82f6","#8b5cf6","#06b6d4","#10b981","#f97316","#ec4899","#f59e0b","#6366f1"];
+  const particleColors = ["#3b82f6", "#8b5cf6", "#06b6d4", "#10b981", "#f97316", "#ec4899", "#f59e0b", "#6366f1"];
 
   return (
     <>
@@ -294,7 +267,6 @@ export default function TechStack() {
 
         .tech-section {
           font-family: 'Outfit', sans-serif;
-         
           position: relative;
           overflow: hidden;
         }
@@ -332,7 +304,7 @@ export default function TechStack() {
       <CursorOrb />
 
       <section ref={sectionRef} id="tech-stack"
-        className=" tech-section flex items-center justify-center py-28 px-6 sm:px-12 lg:px-20"
+        className="tech-section flex items-center justify-center py-28 px-6 sm:px-12 lg:px-20"
       >
 
         {/* Particles */}

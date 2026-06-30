@@ -65,7 +65,7 @@ export default function AboutMeSection() {
             {/* Bio Text */}
             <motion.div className="mb-8" data-purpose="bio-content" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp}>
               <p className="text-lg leading-relaxed mb-4">
-                Hi, I&apos;m <span className="bg-zinc-800 px-2 py-0.5 rounded text-white font-medium">Romjan Islam</span>, a <span className="text-[#00f2a6] font-semibold">Full-Stack Web Developer.</span>
+                Hi, I&apos;m <span className="bg-zinc-800 px-2 py-0.5 rounded text-white font-medium">Romjan Islam</span>, a <span className="text-[#00f2a6] font-semibold">MERN Stack Developer.</span>
               </p>
               <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
                 I enjoy building modern and responsive web applications using React, Next.js, Node.js, and MongoDB. I focus on writing clean code, building REST APIs, and creating practical real-world projects while continuously improving my backend and system design skills.
@@ -77,7 +77,7 @@ export default function AboutMeSection() {
                 <span className="text-xl font-bold">&lt;&gt;</span>
                 <h3 className="text-lg font-bold text-white">Curiosity</h3>
               </div>
-            <p>I’m not just focused on building web applications — I’m more curious about why things work the way they do under the hood.</p>
+              <p>I’m not just focused on building web applications — I’m more curious about why things work the way they do under the hood.</p>
             </motion.div>
             {/* Advanced Technologies List */}
             <motion.div className="mb-10" data-purpose="advanced-tech" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeUp}>

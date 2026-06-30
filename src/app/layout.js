@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Md. Romjan Islam - Portfolio",
-  description: "Portfolio homepage for Md. Romjan Islam built with Next.js and Tailwind CSS",
+  title: "Md. Romjan Ali - Portfolio",
+  description: "Portfolio homepage for Md. Romjan Ali built with Next.js and Tailwind CSS",
+  icons: {
+    icon: "/logoRomjan.png",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -24,7 +27,11 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <MouseProvider>{children}</MouseProvider>
+        <MouseProvider>
+
+          {children}
+
+        </MouseProvider>
       </body>
     </html>
   );

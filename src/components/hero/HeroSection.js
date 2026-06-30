@@ -1,52 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, useTransform } from "framer-motion";
 import { BiMouse } from "react-icons/bi";
 import {
   SiMongodb,
   SiExpress,
-  SiTailwindcss,
-  SiReact,
   SiNextdotjs,
   SiNodedotjs,
   SiJavascript,
-  SiPostman,
-  SiGit,
-  SiHtml5,
-  SiCss3,
 } from "react-icons/si";
 import { useMouse } from "../../contexts/MouseContext";
-
-// ─── Orbit config ─────────────────────────────────────────────────────────────
-// Each orbit ring holds icons placed evenly around a circle.
-// radius: distance from center (px), duration: one full revolution (s)
-const orbitRings = [
-  {
-    radius: 155,
-    duration: 18,
-    direction: 1, // clockwise
-    icons: [
-      { Icon: SiReact,      color: "#61DAFB", label: "React" },
-      { Icon: SiNextdotjs,  color: "#ffffff", label: "Next.js" },
-      { Icon: SiNodedotjs,  color: "#68A063", label: "Node.js" },
-      { Icon: SiJavascript, color: "#F7DF1E", label: "JavaScript" },
-    ],
-  },
-  {
-    radius: 215,
-    duration: 28,
-    direction: -1, // counter-clockwise
-    icons: [
-      { Icon: SiMongodb,    color: "#47A248", label: "MongoDB" },
-      { Icon: SiExpress,    color: "#aaaaaa", label: "Express" },
-      { Icon: SiTailwindcss,color: "#38BDF8", label: "Tailwind" },
-      { Icon: SiPostman,    color: "#FF6C37", label: "Postman" },
-      { Icon: SiGit,        color: "#F05032", label: "Git" },
-    ],
-  },
-];
 
 // ─── Single orbiting icon ─────────────────────────────────────────────────────
 function OrbitIcon({ Icon, color, label, angle, radius, duration, direction, windowWidth, windowHeight }) {
@@ -194,36 +159,36 @@ function OrbitRing({ ring, index, windowWidth, windowHeight }) {
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const techTags = [
-  { label: "MongoDB",    color: "from-emerald-500/15 border-emerald-400/30 text-emerald-300",   Icon: SiMongodb    },
-  { label: "Express",    color: "from-slate-700/20 border-slate-500/30 text-slate-200",         Icon: SiExpress    },
-  { label: "Next.js",    color: "from-white/15 border-white/20 text-white",                     Icon: SiNextdotjs  },
-  { label: "Node.js",    color: "from-emerald-600/15 border-emerald-400/30 text-emerald-200",   Icon: SiNodedotjs  },
-  { label: "JavaScript", color: "from-yellow-400/15 border-yellow-300/30 text-yellow-200",      Icon: SiJavascript },
+  { label: "MongoDB", color: "from-emerald-500/15 border-emerald-400/30 text-emerald-300", Icon: SiMongodb },
+  { label: "Express", color: "from-slate-700/20 border-slate-500/30 text-slate-200", Icon: SiExpress },
+  { label: "Next.js", color: "from-white/15 border-white/20 text-white", Icon: SiNextdotjs },
+  { label: "Node.js", color: "from-emerald-600/15 border-emerald-400/30 text-emerald-200", Icon: SiNodedotjs },
+  { label: "JavaScript", color: "from-yellow-400/15 border-yellow-300/30 text-yellow-200", Icon: SiJavascript },
 ];
 
 const socialIcons = [
   {
-    label: "GitHub", href: "#",
+    label: "GitHub", href: "https://github.com/Md-Romjan-Ali",
     svg: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c.955.005 1.917.129 2.801.378 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c.955.005 1.917.129 2.801.378 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
       </svg>
     ),
   },
   {
-    label: "LinkedIn", href: "#",
+    label: "LinkedIn", href: "https://www.linkedin.com/in/md-romjan-ali",
     svg: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
       </svg>
     ),
   },
   {
-    label: "Email", href: "#",
+    label: "Email", href: "https://mail.google.com/mail/u/0/#inbox",
     svg: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24">
-        <rect height="16" rx="2" width="20" x="2" y="4"/>
-        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        <rect height="16" rx="2" width="20" x="2" y="4" />
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
       </svg>
     ),
   },
@@ -288,7 +253,7 @@ export default function HeroSection() {
   const orbitAreaSize = 500;
 
   return (
-    <main className="bg-grid-pattern relative mx-auto flex max-w-7xl flex-col justify-center px-6 py-24 lg:px-8 min-h-screen">
+    <main className="bg-grid-pattern flex-col-reverse relative mx-auto flex max-w-7xl justify-center px-6 py-24 lg:px-8 min-h-screen">
       <motion.div
         className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center"
         initial="hidden"
@@ -328,9 +293,12 @@ export default function HeroSection() {
             <button className="rounded-2xl bg-white px-8 py-3 text-sm font-semibold text-black transition hover:bg-gray-200 active:scale-95">
               View Projects
             </button>
-            <button className="rounded-2xl border border-white/10 bg-[#121212] px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/5 active:scale-95">
+            <a
+              href="/Resume Romjan.pdf" download
+
+              className="rounded-2xl border border-white/10 bg-[#121212] px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/5 active:scale-95">
               Download Resume
-            </button>
+            </a>
           </motion.div>
 
           <motion.div variants={fadeUp} className="flex gap-3 pt-2">
@@ -338,6 +306,7 @@ export default function HeroSection() {
               <a
                 key={item.label}
                 href={item.href}
+                target="_blank"
                 className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-[#0f0f0f] text-white/70 transition hover:border-[#00df9a]/40 hover:text-[#00df9a] hover:bg-[#00df9a]/5"
                 aria-label={item.label}
               >
@@ -353,10 +322,7 @@ export default function HeroSection() {
           className="relative mx-auto flex items-center justify-center"
           style={{ width: orbitAreaSize, height: orbitAreaSize }}
         >
-          {/* Orbit rings */}
-          {orbitRings.map((ring, i) => (
-            <OrbitRing key={i} ring={ring} index={i} windowWidth={windowWidth} windowHeight={windowHeight} />
-          ))}
+
 
           {/* Soft radial glow behind profile */}
           <div
@@ -371,28 +337,15 @@ export default function HeroSection() {
 
           {/* Profile image */}
           <motion.div
-            className="relative z-20"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div
-              className="relative overflow-hidden rounded-full"
-              style={{
-                width: 220,
-                height: 220,
-                border: "2px solid rgba(0,223,154,0.25)",
-                boxShadow: "0 0 0 8px rgba(0,223,154,0.05), 0 0 60px rgba(0,223,154,0.1)",
-              }}
-            >
-              <Image
-                src="https://i.ibb.co.com/cc6pFkMb/Gemini-Generated-Image-lojvjplojvjplojv-removebg-preview.png"
-                alt="Md. Romjan Ali"
-                fill
-                sizes="220px"
-                className="object-cover"
-              />
-            </div>
 
+            <Image
+              src="https://i.ibb.co.com/xqsbngFL/unnamed-Bkt-Dl6.png"
+              alt="Md. Romjan Ali"
+              width={350}
+              height={500}
+              className="object-cover border-b-8 border-gray-500"
+            />
             {/* Badge: lightning bolt */}
             <motion.div
               className="absolute -top-3 -right-3 flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-[#111] shadow-lg z-30"
