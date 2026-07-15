@@ -20,18 +20,17 @@ const projects = [
     source: "https://github.com/Md-Romjan-Ali/property-rental-client",
   },
   {
-    title: "StudyRoom",
+    title: "DOHPS — Organization",
     description:
-      "Study Nook is a modern AI-powered study platform designed to help users focus better, plan efficiently, and improve learning productivity in a distraction-free environment.",
-    tech: ["React.js", "Next.js", "Node.js", "Express.js", "Tailwind CSS", "Mongodb", "JavaScript (ES6)", "API",],
+      "Built a responsive NGO organization website for DOHPS with dynamic content management, success stories, scholarship information, and secure admin functionality.",
+    tech: ["React.js", "Next.js", "Tailwind CSS", "TypeScript", "Node.js", "Express.js", "Mongodb", "API",],
     images: [
-      "https://i.ibb.co.com/rKVrJGbq/a73e3bae-ebb3-45fa-8eed-2af93bbc1053.jpg",
-      "https://i.ibb.co.com/0pV0yxNt/0d5365f6-f077-4205-9c51-69e5ef8efda4.jpg",
-      "https://i.ibb.co.com/FbhmfyjJ/7af76d10-b7b1-4173-9d02-f7d06e3a1a87.jpg",
+      "https://i.ibb.co.com/0RSRsZD4/image.png",
+      "https://i.ibb.co.com/yc1fbDvy/image.png"
 
     ],
-    live: "https://study-nook-delta.vercel.app/",
-    source: "https://github.com/Md-Romjan-Ali/StudyNook",
+    live: "https://dohps-organization-client-rzsh.vercel.app",
+    source: "https://github.com/Md-Romjan-Ali/Dohps-Organization-Client",
   },
 ];
 
