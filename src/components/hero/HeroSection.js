@@ -290,9 +290,11 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div variants={fadeUp} className="flex flex-wrap gap-4 pt-2">
-            <button className="rounded-2xl bg-white px-8 py-3 text-sm font-semibold text-black transition hover:bg-gray-200 active:scale-95">
+            <a
+              href="#projects"
+              className="rounded-2xl bg-white px-8 py-3 text-sm font-semibold text-black transition hover:bg-gray-200 active:scale-95">
               View Projects
-            </button>
+            </a>
             <a
               href="/Resume Romjan.pdf" download
 
